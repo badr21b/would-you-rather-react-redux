@@ -1,0 +1,29 @@
+
+
+
+
+.questions {
+	list-style: none;
+}
+
+.question {
+	padding-bottom: 24px;
+}
+
+.category-toggler {
+	display: flex;
+	margin: 12px;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+}
+.category-toggler> select{
+	border-radius: 5px;
+	background: transparent;
+	border: 2px solid #d22324;
+	height: 35px;
+	/* width: 100%; */
+	cursor: pointer;
+	color: #3789af;
+	font-weight: bolder;
+}
