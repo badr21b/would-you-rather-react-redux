@@ -3,7 +3,7 @@ let users = {
     id: 'sarahedo',
     name: 'Sarah Edo',
     avatarURL:
-      'https://i.pinimg.com/originals/9d/f9/5d/9df95dd43337435f5713813fb1422b7f.jpg',
+      'https://blog.udacity.com/wp-content/uploads/2019/03/ViennaHarveyHeadshot.png',
     answers: {
       '8xf0y6ziyjabvozdd253nd': 'optionOne',
       '6ni6ok3ym7mf1p33lnez': 'optionOne',
@@ -27,7 +27,7 @@ let users = {
     id: 'johndoe',
     name: 'John Doe',
     avatarURL:
-      'https://pickaface.net/gallery/avatar/TeMix5618f2bc4e2ea.png',
+      'https://avatars1.githubusercontent.com/u/380035?s=460&u=0069c66463361dfc59b19f29430b00c7d244cfbf&v=4',
     answers: {
       xj352vofupe1dqz9emx13r: 'optionOne',
       vthrdm985a262al8qx3do: 'optionTwo',

@@ -89,6 +89,12 @@
 	background-color: antiquewhite;
 	justify-content: space-between;
 }
+.vote-answer-holder:hover{
+	cursor: pointer;
+	/*transform: scale(1.5);*/
+	color: #ffffff;
+	font-weight: bold;
+}
 
 .green {
 	color: #3cb371;

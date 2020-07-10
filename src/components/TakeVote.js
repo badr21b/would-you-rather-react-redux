@@ -65,7 +65,9 @@ class TakeVote extends Component {
             <div>
               <div className={"vote-question-title"}>Would you rather</div>
               <div className={"vote-answers-container"}>
-                <div className={"vote-answer-holder"}>
+                <div className={"vote-answer-holder"}
+                     style={{"backgroundColor":"#3789af", "borderTop":"1px solid #000"}}
+                >
                   <div>
                     A: {question.optionOne.text}
                   </div>
@@ -82,7 +84,10 @@ class TakeVote extends Component {
                     Choose this
                   </button>
                 </div>
-                <div className={"vote-answer-holder"}>
+
+                <div className={"vote-answer-holder"}
+                     style={{"backgroundColor":"#d22324", "borderBottom":"1px solid #000"}}
+                >
                   <div>
                     B: {question.optionTwo.text}
                   </div>
