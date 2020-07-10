@@ -65,9 +65,10 @@ class TakeVote extends Component {
             <div>
               <div className={"vote-question-title"}>Would you rather</div>
               <div className={"vote-answers-container"}>
-                <h3>
-                  A: {question.optionOne.text}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div className={"vote-answer-holder"}>
+                  <div>
+                    A: {question.optionOne.text}
+                  </div>
                   <button
                       className="vote-btn"
                       onClick={() =>
@@ -80,10 +81,11 @@ class TakeVote extends Component {
                   >
                     Choose this
                   </button>
-                </h3>
-                <h3>
-                  B: {question.optionTwo.text}
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div className={"vote-answer-holder"}>
+                  <div>
+                    B: {question.optionTwo.text}
+                  </div>
                   <button
                       className="vote-btn"
                       onClick={e =>
@@ -96,7 +98,7 @@ class TakeVote extends Component {
                   >
                     Choose this
                   </button>
-                </h3>
+                </div>
               </div>
 
             </div>
