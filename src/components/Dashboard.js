@@ -33,7 +33,7 @@ class Dashboard extends Component {
           <ul className="questions">
             {unansweredQuestions.map(id => (
               <li key={id} className="question">
-                <Question id={id} />
+                <Question id={id}  questionListType={"unanswered"}/>
               </li>
             ))}
           </ul>
@@ -43,7 +43,7 @@ class Dashboard extends Component {
           <ul className="questions">
             {answeredQuestions.map(id => (
               <li key={id} className="question">
-                <Question id={id} />
+                <Question id={id} questionListType={"answered"}/>
               </li>
             ))}
           </ul>
@@ -67,7 +67,8 @@ const getAnsweredQuestions = createSelector(
   state => state.questions,
   state => Object.keys(state.users[state.authedUser].answers),
   (questions, answers) =>
-    answers.sort((a, b) => questions[b].timestamp - questions[a].timestamp)
+    answers
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
 )
 
 function mapStateToProps(state) {

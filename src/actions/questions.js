@@ -26,7 +26,7 @@ export function handleSaveQuestion(info) {
       author: info.authedUser
     })
       .then(res => dispatch(handleInitialData(res.author)))
-      .then(() => console.log('plonk'))
+      .then(() => console.log('saved with success'))
       .then(() => dispatch(hideLoading()))
   }
 }

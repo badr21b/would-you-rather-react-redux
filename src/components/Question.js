@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 class Question extends Component {
   render() {
-    const { question, user, question_id } = this.props
+    const { question, user, question_id, questionListType } = this.props
 
     return (
       <div className="question">
@@ -37,7 +37,9 @@ class Question extends Component {
         </div>
         <div className="question-footer">
           <Link to={`/question/${question_id}`}>
-            <button className="vote-button">TAKE A VOTE</button>
+            <button className="vote-button">
+                {(questionListType === "unanswered") ? 'MAKE A POLL' : 'CHECK YOUR POLL'}
+            </button>
           </Link>
         </div>
       </div>

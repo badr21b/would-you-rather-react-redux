@@ -15,19 +15,21 @@ class TakeVote extends Component {
     const {
       question,
       authedUser,
-      rogueQuestion,
+      wrongQuestion,
       questionAnswer,
       users
     } = this.props
 
-    if (rogueQuestion) {
+    if (wrongQuestion) {
       return (
-        <div className="vote-container">
-          <h2>404: Woops, seems like that question went rogue!</h2>
+        <div className="vote-container"
+             style={{"marginTop": "24px","padding":"9px","textAlign":"center"}}
+        >
+          <h2>404: something went wrong!</h2>
           <p>
             Return to{' '}
             <Link to="/">
-              <span className="green">safety</span>
+              <span className="green">Home Page</span>
             </Link>
           </p>
         </div>
@@ -47,7 +49,7 @@ class TakeVote extends Component {
         <div>
           <Link to="/home">
             <button className="returnBtn">
-              &#60;&nbsp;&nbsp;Return to questions
+              &#60;&nbsp;&nbsp;Return to dashboard
             </button>
           </Link>
           <div className="vote-container">
@@ -66,9 +68,9 @@ class TakeVote extends Component {
               <div className={"vote-question-title"}>Would you rather</div>
               <div className={"vote-answers-container"}>
                 <div className={"vote-answer-holder"}
-                     style={{"backgroundColor":"#3789af", "borderTop":"1px solid #000"}}
+                     style={{"backgroundColor":"#3789af", "borderBottom":"1px solid #000"}}
                 >
-                  <div>
+                  <div className={"vote-answer-text"}>
                     A: {question.optionOne.text}
                   </div>
                   <button
@@ -81,14 +83,14 @@ class TakeVote extends Component {
                           })
                       }
                   >
-                    Choose this
+                    Choose this answer
                   </button>
                 </div>
 
                 <div className={"vote-answer-holder"}
-                     style={{"backgroundColor":"#d22324", "borderBottom":"1px solid #000"}}
+                     style={{"backgroundColor":"#d22324", "borderTop":"1px solid #000"}}
                 >
-                  <div>
+                  <div className={"vote-answer-text"}>
                     B: {question.optionTwo.text}
                   </div>
                   <button
@@ -101,7 +103,7 @@ class TakeVote extends Component {
                           })
                       }
                   >
-                    Choose this
+                    Choose this answer
                   </button>
                 </div>
               </div>
@@ -115,7 +117,7 @@ class TakeVote extends Component {
         <div>
           <Link to="/home">
             <button className="returnBtn">
-              &#60;&nbsp;&nbsp;Return to questions
+              &#60;&nbsp;&nbsp;Return to dashboard
             </button>
           </Link>
           <div className="vote-container">
@@ -130,9 +132,9 @@ class TakeVote extends Component {
               </h3>
             </div>
             <br />
-            <div>
-              <h1>Would you rather</h1>
-              <div className="optionOneResults">
+            <div className={""} >
+              <div className={"vote-question-title"}>Would you rather</div>
+              <div className="optionResultHolder">
                 <h3
                   className={
                     users[authedUser].answers[question.id] === 'optionOne'
@@ -143,12 +145,12 @@ class TakeVote extends Component {
                   A: {question.optionOne.text}{' '}
                   <small>
                     {users[authedUser].answers[question.id] === 'optionOne'
-                      ? '- your answer'
+                      ? '<= it was your answer'
                       : ''}
                   </small>
                 </h3>
               </div>
-              <div>
+              <div className="optionResultHolder">
                 <h3
                   className={
                     users[authedUser].answers[question.id] === 'optionTwo'
@@ -164,8 +166,7 @@ class TakeVote extends Component {
                   </small>
                 </h3>
               </div>
-              <div>
-                <hr />
+              <div className={"otherUsersAnswersHolder"}>
                 <h4>What other users voted:</h4>
                 <p>
                   A: {question.optionOne.text} | {optionOneAmount} votes (
@@ -189,12 +190,12 @@ class TakeVote extends Component {
 function mapStateToProps({ questions, users, authedUser }, props) {
   const thisQuestionId = props.match.params.question_id
   const question = questions[thisQuestionId]
-  const rogueQuestion = !questions[thisQuestionId]
+  const wrongQuestion = !questions[thisQuestionId]
   const questionAnswer = users[authedUser].answers[thisQuestionId]
   return {
     questions,
     question,
-    rogueQuestion,
+    wrongQuestion,
     questionAnswer,
     users,
     authedUser,

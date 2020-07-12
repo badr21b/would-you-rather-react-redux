@@ -17,7 +17,10 @@ class LeaderBoard extends Component {
           <div key={user.id} className={"leaderUserContainer"}>
             <div className={"leaderUserInfoHolder"}>
                 <div className={"userName"}>{`${users[user.id].name}`}</div>
-                <div className={"userTotalScore"}>( Total: {user.points} pts)</div>
+                <div className={"userTotalScore"}>
+                  <div className={"scoreText"}>Score</div>
+                  <div className={"scoreValue"}>{user.points}</div>
+                </div>
             </div>
             <div className={"leaderUserAvatarHolder"}>
               {key === 0 && (

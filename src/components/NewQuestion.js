@@ -44,26 +44,42 @@ class NewQuestion extends Component {
 
     return (
       <div>
-        <div className="vote-container wyr-form">
-          <h2>Would you rather:</h2>
+        <div className="vote-container wyr-form" style={{marginTop:"24px"}}>
+          <div className={"newQuestionHeader"}>Would you rather:</div>
           <form onSubmit={this.createQuestion}>
-            <input
-              placeholder="Answer One"
-              onChange={this.noticeChange}
-              value={optionOneText}
-              name="optionOneText"
-            />
-            <br />
-            <input
-              placeholder="Answer Two"
-              onChange={this.noticeChange}
-              value={optionTwoText}
-              name="optionTwoText"
-            />
-            <br />
-            <button type="submit" disabled={dontPost}>
-              Ask question
-            </button>
+            <div className={"formContainer"}>
+              <input
+                  style={{
+                    "backgroundColor": "rgb(210, 35, 36)",
+                    "borderBottom": "1px solid rgb(0, 0, 0)"
+                  }}
+                placeholder="Answer One"
+                onChange={this.noticeChange}
+                value={optionOneText}
+                name="optionOneText"
+              />
+              <br />
+              <input
+                  style={{
+                    "backgroundColor": "rgb(55, 137, 175)",
+                    "borderTop": "1px solid rgb(0, 0, 0)",
+                  }}
+                placeholder="Answer Two"
+                onChange={this.noticeChange}
+                value={optionTwoText}
+                name="optionTwoText"
+              />
+
+            </div>
+            <div className={"askQuestionButtonContainer"}>
+              <button type="submit"
+                      disabled={dontPost}
+                      className={"vote-button"}
+              >
+                Ask question
+              </button>
+            </div>
+
           </form>
         </div>
       </div>

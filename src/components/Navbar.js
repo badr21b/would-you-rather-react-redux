@@ -21,7 +21,7 @@ class NavBar extends Component {
                   <Link to="/leaderboard">Leaderboard</Link>
                 </li>
                 <li className="nav-item ">
-                  <Link to="/add">Add a new question +</Link>
+                  <Link to="/add">Create a new poll +</Link>
                 </li>
               </ul>
               <ul className="nav-list">

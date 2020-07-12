@@ -6,7 +6,7 @@ import User from './User'
 
 class LogInPage extends Component {
   componentDidMount() {
-    this.props.dispatch(setAuthedUser(false))
+    this.props.dispatch(setAuthedUser(null))
   }
 
   render() {
