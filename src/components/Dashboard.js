@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Question from './Question'
 import '../css/dashboard.css'
 import { createSelector } from 'reselect'
+import {Link} from "react-router-dom";
 
 class Dashboard extends Component {
   state = {
@@ -36,6 +37,14 @@ class Dashboard extends Component {
                 <Question id={id}  questionListType={"unanswered"}/>
               </li>
             ))}
+
+            {0 === unansweredQuestions.length && (
+                <div className={"emptyListMessageHolder"}>
+                  No remaining Rolls, you can create a new one by clicking on this
+                  <Link to={'/add'} style={{"color":"green"}}> link </Link>
+                </div>
+            )}
+
           </ul>
         )}
 

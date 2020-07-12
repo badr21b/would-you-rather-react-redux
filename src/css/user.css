@@ -29,7 +29,7 @@
 	-ms-flex-direction: row;
 	flex-direction: row;
 	-ms-flex-align: center;
-	align-items: start;
+	align-items: flex-start;
 	-ms-flex-pack: center;
 	justify-content: center;
 	justify-items: center;

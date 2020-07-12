@@ -135,36 +135,42 @@ class TakeVote extends Component {
             <div className={""} >
               <div className={"vote-question-title"}>Would you rather</div>
               <div className="optionResultHolder">
-                <h3
+                <div
                   className={
                     users[authedUser].answers[question.id] === 'optionOne'
-                      ? 'yourAnswer'
-                      : ''
+                        ? 'yourAnswerContainer answerContainer'
+                        : 'answerContainer'
                   }
                 >
-                  A: {question.optionOne.text}{' '}
-                  <small>
-                    {users[authedUser].answers[question.id] === 'optionOne'
-                      ? '<= it was your answer'
-                      : ''}
-                  </small>
-                </h3>
+                  <div className={"answerOptionHolder"}>
+                    A: {question.optionOne.text}{' '}
+                  </div>
+                  {(users[authedUser].answers[question.id] === 'optionOne')&&(
+                      <div className={"yourVoteTextHolder"}>
+                        Your vote!
+                      </div>
+                  )}
+                </div>
               </div>
               <div className="optionResultHolder">
-                <h3
+                <div
                   className={
                     users[authedUser].answers[question.id] === 'optionTwo'
-                      ? ' <= it was yourAnswer'
-                      : ''
+                      ? 'yourAnswerContainer answerContainer'
+                      : 'answerContainer'
                   }
                 >
-                  B: {question.optionTwo.text}{' '}
-                  <small>
-                    {users[authedUser].answers[question.id] === 'optionTwo'
-                      ? ' <= it was yourAnswer'
-                      : ''}
-                  </small>
-                </h3>
+                  <div className={"answerOptionHolder"}>
+                    B: {question.optionTwo.text}{' '}
+                  </div>
+
+                  {(users[authedUser].answers[question.id] === 'optionTwo')&&(
+                      <div className={"yourVoteTextHolder"}>
+                        Your vote!
+                      </div>
+                  )}
+
+                </div>
               </div>
               <div className={"otherUsersAnswersHolder"}>
                 <h4>What other users voted:</h4>
